@@ -16,9 +16,9 @@
  },
  "tags": "",
  "WailsVersion": "",
- "CrossCompile": true,
- "Platform": "linux",
- "Architecture": "arm-7",
+ "CrossCompile": false,
+ "Platform": "",
+ "Architecture": "",
  "LdFlags": "",
  "GoPath": "",
  "UseFirebug": false
