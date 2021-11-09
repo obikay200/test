@@ -1,0 +1,25 @@
+{
+ "name": "test",
+ "description": "Enter your project description",
+ "author": {
+  "name": "tim",
+  "email": "tim@mail.com"
+ },
+ "version": "0.1.0",
+ "binaryname": "test",
+ "frontend": {
+  "dir": "frontend",
+  "install": "npm install",
+  "build": "npm run build",
+  "bridge": "src",
+  "serve": "npm run serve"
+ },
+ "tags": "",
+ "WailsVersion": "",
+ "CrossCompile": true,
+ "Platform": "linux",
+ "Architecture": "arm-7",
+ "LdFlags": "",
+ "GoPath": "",
+ "UseFirebug": false
+}

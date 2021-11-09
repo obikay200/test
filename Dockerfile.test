@@ -1,0 +1,27 @@
+
+ARG XGO_IMAGE=crazymax/xgo
+ARG XGO_VERSION=1.17
+
+# Platform armhf | DO NOT combine with x86_64 or it breaks the apt-get install
+FROM $XGO_IMAGE:$XGO_VERSION
+
+ENV GOOS=linux
+ENV GOARCH=arm64
+ENV CGO_ENABLED=1
+ENV CC=aarch64-linux-gnu-gcc
+ENV PATH="/go/bin/${GOOS}_${GOARCH}:${PATH}"
+ENV PKG_CONFIG_PATH=/usr/lib/aarch64-linux-gnu/pkgconfig
+
+RUN apt-get update && \
+  dpkg --add-architecture armhf && \
+  apt-get install -y --no-install-recommends \
+  libwebkit2gtk-4.0:armhf \
+  libgtk-3-dev:armhf \
+  libsoup2.4-dev:armhf \
+  libgdk-pixbuf2.0-dev:armhf \
+  libpango1.0-dev:armhf \
+  libharfbuzz-dev:armhf \
+  libxml2-dev:armhf \
+  libicu-dev:armhf && \
+  rm -rf /var/lib/apt/lists/*
+
